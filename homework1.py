@@ -1,8 +1,9 @@
-num1 = 5
-num2 = 3
+string = 'это моя строка'
 
-sum = num1 + num2
-print(sum)
+print(string[0])
+print(string[-1])
+print(string[2:4])
+print(string[::-1])
+print(len(string))
+print('это новая строка ' + string)
 
-result = sum + num1 * num2
-print(result)
