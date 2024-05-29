@@ -12,7 +12,8 @@ print_params(c=[1,2,3])
 values_list = [1, True, 'строка']
 values_dict = {1: 'авпвап', 'строка': 1, True: False}
 
-print_params(*values_list, **values_dict)
+print_params(*values_list)
+print_params(**values_dict)
 
 
 values_list2 = [1, 'строка']
