@@ -1,16 +1,15 @@
 class House:
-    def __init__(self, numberOfFloors, floors):
-        self.numberOfFloors = numberOfFloors
-        self.floors = floors
+    def __init__(self, numberOfFloors):
+        self.numberOfFFloors = numberOfFloors
+        self.numberOfFFloors = 0
 
-    def __del__(self):
-        self.numberOfFloors = self.floors
-        print(self.numberOfFloors)
-
-
-h = House(0, 15)
-print(h)
+    def setNewNumberOfFloors(self, floors):
+        self.numberOfFFloors = floors
+        print(self.numberOfFFloors)
 
 
+number = int(input('Введите кол-во этажей: '))
 
+h = House(0)
 
+print(h.setNewNumberOfFloors(number))
