@@ -47,7 +47,7 @@ async def get_formulas(call: types.CallbackQuery):
                               "Для женщин: BMR = 10 * вес(кг) + 6.25 * рост(см) - 5 * возраст(лет) - 161")
     await call.answer()
 
-@dp.callback_query_handler(text='calories')
+@dp.callback_query_handler(lambda c: c.data=='calories')
 async def set_age(call: types.CallbackQuery):
     await call.message.answer('Введите свой возраст:')
     await UserState.age.set()
@@ -76,7 +76,7 @@ async def send_calories(message: types.Message, state: FSMContext):
 
     calories = 10 * weight + 6.25 * growth - 5 * age + 5
 
-    await message.answer(f"Ваша норма калорий: calories:.2f ккал.")
+    await message.answer(f"Ваша норма калорий: {calories}:.2f ккал.")
     await state.finish()
 
 if __name__ == '__main__':
